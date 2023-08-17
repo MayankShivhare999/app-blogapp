@@ -3,16 +3,19 @@ package com.sample.blogapp.entities;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.lang.NonNull;
+import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
+@Builder
 @Getter
 @Setter
 @ToString
 @RequiredArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class Article {
 
     @Id
@@ -27,7 +30,7 @@ public class Article {
     @Column(unique = true)
     private String slug;
 
-    @NonNull
+    @Nullable
     private String subtitle;
 
     @NonNull
